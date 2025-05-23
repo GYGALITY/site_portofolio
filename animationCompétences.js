@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const bigBubble = container.querySelector(".big-bubble");
   const bubbles = Array.from(container.querySelectorAll(".bubble"));
 
-  const radius = 200;
+  const radius = 250;
   let angleOffset = 0;
   let animationId = null;
   let returnTimeoutId = null; // Pour stocker le timeout
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
       bubble.style.top = `${y}px`;
     });
 
-    angleOffset += 0.01;
+    angleOffset += 0.005;
     animationId = requestAnimationFrame(updateCircularPositions);
   };
 
@@ -53,14 +53,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const containerWidth = container.offsetWidth;
     const centerY = container.offsetHeight / 2;
-    const spacing = 130;
+    const spacing = 120;
 
     bubbles.forEach((bubble, i) => {
       bubble.style.transition = "all 0.5s ease";
       bubble.style.top = `${centerY - bubble.offsetHeight / 2}px`;
       bubble.style.left = `${(containerWidth - (bubbles.length - 1) * spacing) / 2 + i * spacing}px`;
       bubble.style.borderRadius = "20px";
-      bubble.style.transitionDelay = `${i * 0.05}s`;
+      bubble.style.transitionDelay = `${i * 0.04}s`;
     });
   });
 
@@ -92,4 +92,36 @@ document.addEventListener("DOMContentLoaded", () => {
       returnTimeoutId = null;
     }, 800);
   });
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.querySelector("#competence .filter");
+  const mainContainer = document.querySelector("#competence");
+  const bubbles = Array.from(container.querySelectorAll(".bubble"));
+  const imageElements = [];
+
+  // Crée des images pour chaque bulle en-dehors du filtre
+  bubbles.forEach((bubble, i) => {
+    const img = document.createElement("img");
+    img.src = bubble.dataset.image; // Assure-toi que chaque .bubble a data-image="..."
+    img.classList.add("bubble-image");
+    mainContainer.appendChild(img);
+    imageElements.push(img);
+  });
+
+  // Synchroniser les positions des images avec les bulles
+  const syncImagePositions = () => {
+    bubbles.forEach((bubble, i) => {
+      const bubbleRect = bubble.getBoundingClientRect();
+      const containerRect = mainContainer.getBoundingClientRect();
+
+      imageElements[i].style.left = `${bubbleRect.left - containerRect.left + bubble.offsetWidth / 2 - 35}px`;
+      imageElements[i].style.top = `${bubbleRect.top - containerRect.top + bubble.offsetHeight / 2 - 35}px`;
+    });
+
+    requestAnimationFrame(syncImagePositions);
+  };
+
+  syncImagePositions();
 });
