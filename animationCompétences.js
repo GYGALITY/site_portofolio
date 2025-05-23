@@ -7,8 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let angleOffset = 0;
   let animationId = null;
   let returnTimeoutId = null; // Pour stocker le timeout
-  let lastTimestamp = null;
-  const speed = 0.5; // vitesse en radians par seconde
 
   const getCenter = () => {
     const bigRect = bigBubble.getBoundingClientRect();
@@ -19,14 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
     return { centerX, centerY };
   };
 
-  // Animation circulaire fluide avec gestion du delta temps
-  const updateCircularPositions = (timestamp) => {
-    if (!lastTimestamp) lastTimestamp = timestamp;
-    const delta = (timestamp - lastTimestamp) / 1000; // secondes
-    lastTimestamp = timestamp;
-
-    angleOffset += speed * delta; // progression selon temps écoulé
-
+  // Animation circulaire fluide
+  const updateCircularPositions = () => {
     const { centerX, centerY } = getCenter();
 
     bubbles.forEach((bubble, i) => {
@@ -39,11 +31,12 @@ document.addEventListener("DOMContentLoaded", () => {
       bubble.style.top = `${y}px`;
     });
 
+    angleOffset += 0.005;
     animationId = requestAnimationFrame(updateCircularPositions);
   };
 
   // Démarrage initial
-  animationId = requestAnimationFrame(updateCircularPositions);
+  updateCircularPositions();
 
   container.addEventListener("mouseenter", () => {
     // Stopper animation en cours
@@ -51,7 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (animationId) {
       cancelAnimationFrame(animationId);
       animationId = null;
-      lastTimestamp = null;
     }
     // Annuler timeout de retour s’il existe
     if (returnTimeoutId) {
@@ -102,6 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector("#competence .filter");
   const mainContainer = document.querySelector("#competence");
@@ -117,16 +110,19 @@ document.addEventListener("DOMContentLoaded", () => {
     imageElements.push(img);
   });
 
-  // Synchroniser les positions des images avec les bulles
-  const syncImagePositions = () => {
-    bubbles.forEach((bubble, i) => {
-      const bubbleRect = bubble.getBoundingClientRect();
+  let lastSyncTime = 0;
+  const throttleDelay = 33; // ms, environ 30 fps
+
+  const syncImagePositions = (timestamp = 0) => {
+    if (timestamp - lastSyncTime > throttleDelay) {
       const containerRect = mainContainer.getBoundingClientRect();
-
-      imageElements[i].style.left = `${bubbleRect.left - containerRect.left + bubble.offsetWidth / 2 - 35}px`;
-      imageElements[i].style.top = `${bubbleRect.top - containerRect.top + bubble.offsetHeight / 2 - 35}px`;
-    });
-
+      bubbles.forEach((bubble, i) => {
+        const bubbleRect = bubble.getBoundingClientRect();
+        imageElements[i].style.left = `${bubbleRect.left - containerRect.left + bubble.offsetWidth / 2 - 35}px`;
+        imageElements[i].style.top = `${bubbleRect.top - containerRect.top + bubble.offsetHeight / 2 - 35}px`;
+      });
+      lastSyncTime = timestamp;
+    }
     requestAnimationFrame(syncImagePositions);
   };
 
