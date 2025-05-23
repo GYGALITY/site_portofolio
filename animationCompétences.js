@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let angleOffset = 0;
   let animationId = null;
   let returnTimeoutId = null; // Pour stocker le timeout
+  let lastTimestamp = null;
+  const speed = 0.5; // vitesse en radians par seconde
 
   const getCenter = () => {
     const bigRect = bigBubble.getBoundingClientRect();
@@ -17,8 +19,14 @@ document.addEventListener("DOMContentLoaded", () => {
     return { centerX, centerY };
   };
 
-  // Animation circulaire fluide
-  const updateCircularPositions = () => {
+  // Animation circulaire fluide avec gestion du delta temps
+  const updateCircularPositions = (timestamp) => {
+    if (!lastTimestamp) lastTimestamp = timestamp;
+    const delta = (timestamp - lastTimestamp) / 1000; // secondes
+    lastTimestamp = timestamp;
+
+    angleOffset += speed * delta; // progression selon temps écoulé
+
     const { centerX, centerY } = getCenter();
 
     bubbles.forEach((bubble, i) => {
@@ -31,12 +39,11 @@ document.addEventListener("DOMContentLoaded", () => {
       bubble.style.top = `${y}px`;
     });
 
-    angleOffset += 0.005;
     animationId = requestAnimationFrame(updateCircularPositions);
   };
 
   // Démarrage initial
-  updateCircularPositions();
+  animationId = requestAnimationFrame(updateCircularPositions);
 
   container.addEventListener("mouseenter", () => {
     // Stopper animation en cours
@@ -44,6 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (animationId) {
       cancelAnimationFrame(animationId);
       animationId = null;
+      lastTimestamp = null;
     }
     // Annuler timeout de retour s’il existe
     if (returnTimeoutId) {
@@ -93,7 +101,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 800);
   });
 });
-
 
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector("#competence .filter");
