@@ -1,0 +1,426 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+
+
+body{
+    
+    margin: 10%;
+    margin-top: 60px;
+    background-color: #12061F;
+    color: white; 
+    margin-bottom: 0;
+
+}
+
+nav{
+    display: flex;
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5vh;
+    min-height: 30px;
+    background-color: #1A0B2E;
+    z-index: 2; 
+    align-items: center;
+    justify-content:center;
+    
+}
+
+nav > div:nth-of-type(1){
+    display: flex;
+    flex-grow: 2;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    
+
+}
+
+nav > div > span{
+    padding: 1vh;
+    border-radius: 5%;
+
+}
+
+nav > div:hover > span{
+    background-color: rgba(255, 255, 255, 0.1);
+
+}
+
+
+nav > div > span > a{
+   color: white;
+   text-decoration: none;
+
+}
+
+
+nav > div:nth-of-type(2){
+    display: flex;
+    justify-content: center;
+    flex-grow: 7;
+    flex-direction:column;
+    align-items: center;
+    
+
+}
+
+
+
+
+
+
+
+
+nav > div:nth-of-type(3){
+    display: block;
+    flex-grow: 30;
+
+}
+
+
+
+
+
+
+/* Style du conteneur */
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Le menu caché par défaut */
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: #251C31;
+    min-width: 160px;
+    z-index: 10;
+    border-radius: 5px;
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    flex-direction: column;
+  }
+  
+  /* Lien dans le menu */
+  .dropdown-menu a {
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-menu a:hover {
+    background-color: #3b2c4d;
+  }
+  
+  /* Affiche le menu quand on survole "Projet" */
+  .dropdown:hover .dropdown-menu {
+    display: flex;
+  }
+
+
+
+
+#projet{
+    margin-bottom: 500px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 200px;
+    
+
+    
+}
+#projet > div{
+    position: relative;
+
+    
+}
+
+
+body > span{
+    position: relative;
+    font-size: 30px;
+    font-weight: bold;
+    
+}
+
+#projet .flou{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    flex-direction: column;
+    z-index: 1;
+    position: absolute;
+    top:40%;
+    left: 50%;
+    border-radius: 1vw;
+    border-width: 1px;
+    border-color: black;
+    border-style:solid;
+    backdrop-filter: blur(6px);
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+#projet .droite .flou{
+    left: 0%;
+    right: 50%;
+}
+
+#projet .flou > span{
+    font-size: 2vw;
+    margin-top: 2vw;
+}
+
+#projet .flou > p{
+    padding: 3vw;
+    font-size: 1.5vw;
+}
+
+#projet > div > div > div{
+    position: relative;
+    height: 30vw;
+    aspect-ratio: 16/9;
+    width: auto;
+    background-color: #2B0A3A;
+    border-radius: 0%;
+    overflow: hidden;
+    border-radius:0 calc(0.95*1vw) 0 1vw ;
+}
+
+#projet .droite > div > div{
+    
+    margin-left: auto;
+    border-radius: calc(0.95*1vw) 0 1vw 0;
+}
+
+#projet img{
+    position: absolute;
+    height:95%;
+    width:95%;    
+    bottom: 0;
+    border-radius:0 1vw 0 0 ;
+    
+}
+
+#projet .droite img{
+    right: 0;
+    border-radius: 1vw 0 0 0 ;
+}
+
+
+#compétence > div{
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+#compétence > span{
+    font-size: 30px;
+    font-weight: bold;
+    
+}
+
+#compétence > div > span{
+    font-weight: bold;
+}
+
+#compétence > div > div{
+    gap: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+#compétence > div > div > div{
+    height: 110px;
+    width: 110px;
+    min-height: 110px;
+    min-width: 110px;
+    display: flex;
+    background-color: #251C31;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 50%;
+
+   
+    
+}
+
+#compétence > div > div > div > span{
+    font-size: 15px;
+    
+ 
+}
+
+#compétence > div > div > div > img{
+    height: 60%;
+    
+ 
+}
+
+
+
+.glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(30deg);
+    width: 45%;
+    height: 160%;
+    border-radius: 50% / 50%;
+    background-color: rgba(138, 43, 226, 0.4); /* violet clair */
+    filter: blur(40px); /* diffuse l’ensemble de l’ovale */
+    z-index: 0;
+    pointer-events: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* page projet numéro 1 */
+
+#detail-projet {
+    margin-top: 80px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#detail-projet h1 {
+    text-align: center;
+    font-size: 3em;
+    margin: 60px 0 40px 0;
+}
+
+.projet-detail-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* centre verticalement */
+    min-height: 80vh; /* espace suffisant pour centrer sans coller au footer */
+    gap: 40px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+.image-container img {
+    width: 80%;
+    max-width: 900px;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .image-container img:hover {
+    animation: zoomBounce 0.8s ease forwards;
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.2);
+  }
+
+  @keyframes zoomBounce {
+    0% {
+      transform: scale(1);
+    }
+    40% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1.035);
+    }
+  }
+
+.description {
+    max-width: 900px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+}
+
+.description h2 {
+    font-size: 1.8em;
+    margin-top: 20px;
+    color: #b68dff;
+}
+
+.description p, .description ul {
+    font-size: 1.2em;
+    line-height: 1.6em;
+    margin-top: 10px;
+}
+
+.description ul {
+    list-style: square inside;
+}
+
+
+
+
+
+
+footer {
+    position: absolute;
+    height: 200px;
+    width: 100%;
+    background-color: #1A0B2E;
+    margin-top: 100px; /* ajoute un peu d’espace au-dessus si nécessaire */
+    left: 0 ;
+}
+
+  /* Animation de fade + montée */
+@keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+  
+  /* Appliqué à chaque bloc projet */
+  .projet-anim {
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards;
+}
+  
+  /* Délais progressifs pour l’effet en cascade */
+  .projet-anim:nth-child(1) {
+    animation-delay: 0.2s;
+}
+  .projet-anim:nth-child(2) {
+    animation-delay: 0.5s;
+}
+  .projet-anim:nth-child(3) {
+    animation-delay: 0.8s;
+}
