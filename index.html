@@ -71,8 +71,8 @@
   </div>
 
 
- <section id="competence">
-  <!-- Effet SVG liquide -->
+<section id="competence">
+  <!-- SVG Goo -->
   <svg>
     <defs>
       <filter id="goo">
@@ -81,24 +81,66 @@
              1 0 0 0 0
              0 1 0 0 0
              0 0 1 0 0
-             0 0 0 30 -15"/>
+             0 0 1 30 -15"/>
         <feBlend in="SourceGraphic"/>
       </filter>
     </defs>
   </svg>
 
+  <!-- Couche visible avec images -->
   <div class="filter">
     <div class="big-bubble"></div>
-    <div class="bubble" data-image="media/css.png"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    
+
+    <div class="orbitpos">
+      <div class="orbit" style="--i:0;">
+        <div class="bubble">
+          <img src="media/Command Line Icon.png" alt="">
+        </div>
+      </div>
+      <div class="orbit" style="--i:1;">
+        <div class="bubble">
+          <img src="media/css.png" alt="">
+        </div>
+      </div>
+      <div class="orbit" style="--i:2;">
+        <div class="bubble">
+          <img src="img3.png" alt="">
+        </div>
+      </div>
+      <div class="orbit" style="--i:3;">
+        <div class="bubble">
+          <img src="img4.png" alt="">
+        </div>
+      </div>
+      <div class="orbit" style="--i:4;">
+        <div class="bubble">
+          <img src="img4.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Couche masquée avec bulle filtrée uniquement -->
+  <div class="filter mask">
+    <div class="big-bubble"></div>
+
+    <div class="orbitpos">
+      <div class="orbit" style="--i:0;">
+        <div class="bubble"></div>
+      </div>
+      <div class="orbit" style="--i:1;">
+        <div class="bubble"></div>
+      </div>
+      <div class="orbit" style="--i:2;">
+        <div class="bubble"></div>
+      </div>
+      <div class="orbit" style="--i:3;">
+        <div class="bubble"></div>
+      </div>
+      <div class="orbit" style="--i:4;">
+        <div class="bubble"></div>
+      </div>
+    </div>
   </div>
 </section>
 
