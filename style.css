@@ -342,7 +342,7 @@ body > span{
   }
   
   .image-container img:hover {
-    animation: zoomBounce 0.8s ease forwards;
+    animation: zoomBounce 0.7s ease forwards;
     box-shadow: 0 0 40px rgba(255, 255, 255, 0.2);
   }
 
@@ -353,8 +353,9 @@ body > span{
     40% {
       transform: scale(1.05);
     }
+    
     100% {
-      transform: scale(1.035);
+      transform: scale(1.02);
     }
   }
 
