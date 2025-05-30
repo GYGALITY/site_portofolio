@@ -269,6 +269,7 @@ body > span{
 
 #compétence > div > div > div > img{
     height: 60%;
+    width: auto;
     
  
 }
@@ -424,4 +425,30 @@ footer {
 }
   .projet-anim:nth-child(3) {
     animation-delay: 0.8s;
+}
+
+.techno-images{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.cont-img{
+    height: 80px;
+    width: 80px;
+    min-height: 80px;
+    min-width: 80px;
+    display: flex;
+    background-color: #251C31;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 50%;
+}
+
+.tech-icon{
+    height: 60%;
+    
 }

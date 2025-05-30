@@ -18,7 +18,7 @@
       <div class="dropdown-menu">
         <a href="projet.html?projet=projet1">Projet 1</a>
         <a href="projet.html?projet=projet2">Projet 2</a>
-        <a href="projet.html?projet=projet3">Projet 3</a>
+        <a href="projet.html?projet=projet3">Site alten</a>
       </div>
     </div>
     
@@ -44,65 +44,69 @@
   <footer></footer>
 
   <script>
-    const projets = {
-      projet1: {
-        titre: "Portfolio Personnel",
-        image: "media/projet1.png",
-        objectif: "Créer un portfolio en ligne pour présenter mes projets personnels de développement.",
-        techno: ["HTML", "CSS", "JavaScript"],
-        travail: "J'ai conçu la structure du site, développé toutes les sections (accueil, projets, contact) et ajouté une animation en JavaScript."
-      },
-      projet2: {
-        titre: "Application ToDo",
-        image: "media/projet2.png",
-        objectif: "Développer une application de gestion de tâches simple et intuitive.",
-        techno: ["HTML", "CSS", "React"],
-        travail: "Je me suis chargé de l’interface utilisateur avec React, ainsi que de la logique de gestion des tâches (ajout, suppression, tri)."
-      },
-      projet3: {
-        titre: "Site Alten",
-        image: "media/projet3.png",
-        objectif: "Coder un site pour des élèves de 3e à la recherche d’un stage, avec une interface simplifiée.",
-        techno: ["HTML", "CSS", "JavaScript"],
-        travail: `J’ai conçu une maquette du site selon les attentes. J’ai réalisé la page "Le Groupe" en HTML, CSS et JavaScript.`
-      }
-    };
+  const projets = {
+    projet1: {
+      titre: "Portfolio Personnel",
+      image: "media/projet1.png",
+      objectif: "Créer un portfolio en ligne pour présenter mes projets personnels de développement.",
+      techno: ["html", "css", "javascript"],
+      travail: "J'ai conçu la structure du site, développé toutes les sections (accueil, projets, contact) et ajouté une animation en JavaScript."
+    },
+    projet2: {
+      titre: "Application ToDo",
+      image: "media/projet2.png",
+      objectif: "Développer une application de gestion de tâches simple et intuitive.",
+      techno: ["html", "css", "react"],
+      travail: "Je me suis chargé de l’interface utilisateur avec React, ainsi que de la logique de gestion des tâches (ajout, suppression, tri)."
+    },
+    projet3: {
+      titre: "Site Alten",
+      image: "media/projet3.png",
+      objectif: "Coder un site pour des élèves de 3e à la recherche d’un stage, avec une interface simplifiée.",
+      techno: ["html", "css", "js"],
+      travail: `J’ai conçu une maquette du site selon les attentes. J’ai réalisé la page "Le Groupe" en HTML, CSS et JavaScript.`
+    }
+  };
 
-    function getParametreProjet() {
-      const params = new URLSearchParams(window.location.search);
-      return params.get('projet');
+  function getParametreProjet() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('projet');
+  }
+
+  function afficherProjet(cle) {
+    const projet = projets[cle];
+    if (!projet) {
+      document.querySelector("#detail-projet h1").textContent = "Projet introuvable";
+      document.querySelector(".description").innerHTML = "<p>Le projet spécifié n'existe pas. Veuillez en sélectionner un autre.</p>";
+      return;
     }
 
-    function afficherProjet(cle) {
-      const projet = projets[cle];
-      if (!projet) {
-        document.querySelector("#detail-projet h1").textContent = "Projet introuvable";
-        document.querySelector(".description").innerHTML = "<p>Le projet spécifié n'existe pas. Veuillez en sélectionner un autre.</p>";
-        return;
-      }
+    document.querySelector("#detail-projet h1").textContent = projet.titre;
+    document.querySelector(".image-container img").src = projet.image;
+    document.querySelector(".image-container img").alt = `Image du projet ${projet.titre}`;
+    
+    const descriptionDiv = document.querySelector(".description");
+    descriptionDiv.innerHTML = `
+      <h2>Objectif du projet</h2>
+      <p>${projet.objectif}</p>
 
-      document.querySelector("#detail-projet h1").textContent = projet.titre;
-      document.querySelector(".image-container img").src = projet.image;
-      document.querySelector(".image-container img").alt = `Image du projet ${projet.titre}`;
-      
-      const descriptionDiv = document.querySelector(".description");
-      descriptionDiv.innerHTML = `
-        <h2>Objectif du projet</h2>
-        <p>${projet.objectif}</p>
+      <h2>Technologies utilisées</h2>
+      <div class="techno-images">
+        
+        ${projet.techno.map(tech => `<div class="cont-img"><img src="media/${tech}.png" alt="${tech}" class="tech-icon"></div>`).join('')}
+        
+      </div>
 
-        <h2>Technologies utilisées</h2>
-        <ul>${projet.techno.map(tech => `<li>${tech}</li>`).join('')}</ul>
+      <h2>Mon travail dans ce projet</h2>
+      <p>${projet.travail}</p>
+    `;
+  }
 
-        <h2>Mon travail dans ce projet</h2>
-        <p>${projet.travail}</p>
-      `;
-    }
-
-    window.addEventListener("DOMContentLoaded", () => {
-      const cleProjet = getParametreProjet() || "projet3"; // valeur par défaut
-      afficherProjet(cleProjet);
-    });
-  </script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const cleProjet = getParametreProjet() || "projet3"; // valeur par défaut
+    afficherProjet(cleProjet);
+  });
+</script>
 
 </body>
 </html>
