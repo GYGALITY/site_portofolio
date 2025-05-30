@@ -16,9 +16,12 @@
     <div class="dropdown">
       <span class="dropdown-toggle">Projet</span>
       <div class="dropdown-menu">
-        <a href="projet.html?projet=projet1">Projet 1</a>
-        <a href="projet.html?projet=projet2">Projet 2</a>
-        <a href="projet.html?projet=projet3">Site alten</a>
+         <a href="projet.html?projet=projet1">Guide Debian</a>
+        <a href="projet.html?projet=projet2">Analyse base de Donnée</a>
+        <a href="projet.html?projet=projet3">Site Alten</a>
+        <a href="projet.html?projet=projet4">classement de dépêche</a>
+        <a href="projet.html?projet=projet5">Création base de donnée</a>
+        <a href="projet.html?projet=projet6">installation poste de dévélopement</a>
       </div>
     </div>
     
@@ -46,18 +49,18 @@
   <script>
   const projets = {
     projet1: {
-      titre: "Portfolio Personnel",
+      titre: "Guide d'installation de Debian",
       image: "media/projet1.png",
-      objectif: "Créer un portfolio en ligne pour présenter mes projets personnels de développement.",
-      techno: ["html", "css", "javascript"],
+      objectif: "Créer un Guide d'installation pour installer un serveur debian équipé d'Apache, PostgreSQL et PHP",
+      techno: ["comline", "word", "php", "sql","java"],
       travail: "J'ai conçu la structure du site, développé toutes les sections (accueil, projets, contact) et ajouté une animation en JavaScript."
     },
     projet2: {
-      titre: "Application ToDo",
+      titre: "Exploitation d'une base de donnée ",
       image: "media/projet2.png",
-      objectif: "Développer une application de gestion de tâches simple et intuitive.",
-      techno: ["html", "css", "react"],
-      travail: "Je me suis chargé de l’interface utilisateur avec React, ainsi que de la logique de gestion des tâches (ajout, suppression, tri)."
+      objectif: "L'objectif de projet est d'informer les usagers sur les accidents de la route en France ces vingt dernières années.",
+      techno: ["r","sql","comline","word"],
+      travail: "Lors de ce projet mon travail à été de trier les informations d'une base de donnée libre pour obtenir des information uniquement sur les vélo en nouvelle Aquitaine puis ensuite de les réutiliser avec du R pour produire des graphique pour un document PDF avec différentes indormations."
     },
     projet3: {
       titre: "Site Alten",
@@ -65,6 +68,27 @@
       objectif: "Coder un site pour des élèves de 3e à la recherche d’un stage, avec une interface simplifiée.",
       techno: ["html", "css", "js"],
       travail: `J’ai conçu une maquette du site selon les attentes. J’ai réalisé la page "Le Groupe" en HTML, CSS et JavaScript.`
+    },
+    projet4: {
+      titre: "Algorithme de classement de dépêche en Java",
+      image: "media/projet4.png",
+      objectif: "L'objectif de ce projet est de créer un programme de classification automatique de dépêches aussi fiable et aussi rapide que possible",
+      techno: ["java"],
+      travail: `Je me suis occuper de la réflexion pour optimiser au mieu le code pour être rapide mais également efficace mais également d'implémenter ça en java`
+    },
+    projet5: {
+      titre: "Création d'une base de données d'un club de bowling",
+      image: "media/projet5.png",
+      objectif: "",
+      techno: ["sql","word"],
+      travail: ``
+    },
+    projet6: {
+      titre: "Installation d'un poste de dévellopement linux",
+      image: "media/projet6.png",
+      objectif: "L'objectif de ce projet était d'installer un poste linux pour le dévellopent en y installent des logiciels",
+      techno: ["comline", "xmind"],
+      travail: `J'ai installer un système d'exploitation debian, j'ai égalment effectuer la configuration de la machine ainsi que des logiciels comme inteliji pour pouvoir développer dessus, j'ai égalemennt creer une carte mentale pour résumer les actions que j'avaient effectuer tout au long de l'installation`
     }
   };
 
@@ -103,7 +127,7 @@
   }
 
   window.addEventListener("DOMContentLoaded", () => {
-    const cleProjet = getParametreProjet() || "projet3"; // valeur par défaut
+    const cleProjet = getParametreProjet() || "projet1"; // valeur par défaut
     afficherProjet(cleProjet);
   });
 </script>

@@ -107,7 +107,7 @@ nav > div:nth-of-type(3){
     left: 50%;
     transform: translate(-50%);
     background-color: #251C31;
-    min-width: 160px;
+    min-width: 220px;
     z-index: 10;
     border-radius: 5px;
     padding: 10px 0;
@@ -121,6 +121,7 @@ nav > div:nth-of-type(3){
     padding: 8px 16px;
     text-decoration: none;
     display: block;
+    border-radius: 40px;
   }
   
   .dropdown-menu a:hover {
@@ -243,6 +244,7 @@ body > span{
     gap: 100px;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 #compétence > div > div > div{
@@ -255,6 +257,7 @@ body > span{
     justify-content:center;
     align-items: center;
     flex-direction: column;
+    
     border-radius: 50%;
 
    
@@ -389,14 +392,6 @@ body > span{
 
 
 
-footer {
-    position: absolute;
-    height: 200px;
-    width: 100%;
-    background-color: #1A0B2E;
-    margin-top: 100px; /* ajoute un peu d’espace au-dessus si nécessaire */
-    left: 0 ;
-}
 
   /* Animation de fade + montée */
 @keyframes fadeUp {
@@ -451,4 +446,31 @@ footer {
 .tech-icon{
     height: 60%;
     
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    position: absolute;
+    height: 200px;
+    width: 100%;
+    background-color: #1A0B2E;
+    margin-top: 100px; /* ajoute un peu d’espace au-dessus si nécessaire */
+    left: 0 ;
 }
