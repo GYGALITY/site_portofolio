@@ -50,16 +50,15 @@
   const projets = {
     projet1: {
       titre: "Guide d'installation de Debian",
-      image: "media/projet1.png",
       objectif: "Créer un Guide d'installation pour installer un serveur debian équipé d'Apache, PostgreSQL et PHP",
-      techno: ["comline", "word", "php", "sql","java"],
-      travail: "J'ai conçu la structure du site, développé toutes les sections (accueil, projets, contact) et ajouté une animation en JavaScript."
+      techno: ["comline", "word", "php", "sql", "java"],
+      travail: "J'ai conçu la structure du site, développé toutes les sections (accueil, projets, contact) et ajouté une animation en JavaScript.",
+      bouton: { texte: "Voir le guide", lien: "https://gygality.github.io/alten/" }
     },
     projet2: {
       titre: "Exploitation d'une base de donnée ",
-      image: "media/projet2.png",
       objectif: "L'objectif de projet est d'informer les usagers sur les accidents de la route en France ces vingt dernières années.",
-      techno: ["r","sql","comline","word"],
+      techno: ["r", "sql", "comline", "word"],
       travail: "Lors de ce projet mon travail à été de trier les informations d'une base de donnée libre pour obtenir des information uniquement sur les vélo en nouvelle Aquitaine puis ensuite de les réutiliser avec du R pour produire des graphique pour un document PDF avec différentes indormations."
     },
     projet3: {
@@ -67,25 +66,25 @@
       image: "media/projet3.png",
       objectif: "Coder un site pour des élèves de 3e à la recherche d’un stage, avec une interface simplifiée.",
       techno: ["html", "css", "js"],
-      travail: `J’ai conçu une maquette du site selon les attentes. J’ai réalisé la page "Le Groupe" en HTML, CSS et JavaScript.`
+      travail: `J’ai conçu une maquette du site selon les attentes. J’ai réalisé la page "Le Groupe" en HTML, CSS et JavaScript.`,
+      bouton: { texte: "Lien du site", lien: "https://gygality.github.io/alten/" }
+
     },
     projet4: {
       titre: "Algorithme de classement de dépêche en Java",
-      image: "media/projet4.png",
       objectif: "L'objectif de ce projet est de créer un programme de classification automatique de dépêches aussi fiable et aussi rapide que possible",
       techno: ["java"],
       travail: `Je me suis occuper de la réflexion pour optimiser au mieu le code pour être rapide mais également efficace mais également d'implémenter ça en java`
     },
     projet5: {
       titre: "Création d'une base de données d'un club de bowling",
-      image: "media/projet5.png",
       objectif: "",
-      techno: ["sql","word"],
-      travail: ``
+      techno: ["sql", "word"],
+      travail: ``,
+      bouton: { texte: "Télécharger le PDF", lien: "https://example.com/bowling" }
     },
     projet6: {
       titre: "Installation d'un poste de dévellopement linux",
-      image: "media/projet6.png",
       objectif: "L'objectif de ce projet était d'installer un poste linux pour le dévellopent en y installent des logiciels",
       techno: ["comline", "xmind"],
       travail: `J'ai installer un système d'exploitation debian, j'ai égalment effectuer la configuration de la machine ainsi que des logiciels comme inteliji pour pouvoir développer dessus, j'ai égalemennt creer une carte mentale pour résumer les actions que j'avaient effectuer tout au long de l'installation`
@@ -99,35 +98,48 @@
 
   function afficherProjet(cle) {
     const projet = projets[cle];
+    const detail = document.querySelector("#detail-projet");
+    const titreEl = detail.querySelector("h1");
+    const imageEl = document.querySelector(".image-container img");
+    const descriptionDiv = document.querySelector(".description");
+
     if (!projet) {
-      document.querySelector("#detail-projet h1").textContent = "Projet introuvable";
-      document.querySelector(".description").innerHTML = "<p>Le projet spécifié n'existe pas. Veuillez en sélectionner un autre.</p>";
+      titreEl.textContent = "Projet introuvable";
+      descriptionDiv.innerHTML = "<p>Le projet spécifié n'existe pas. Veuillez en sélectionner un autre.</p>";
+      imageEl.style.display = "none";
       return;
     }
 
-    document.querySelector("#detail-projet h1").textContent = projet.titre;
-    document.querySelector(".image-container img").src = projet.image;
-    document.querySelector(".image-container img").alt = `Image du projet ${projet.titre}`;
-    
-    const descriptionDiv = document.querySelector(".description");
+    titreEl.textContent = projet.titre;
+
+    // Affichage conditionnel de l'image
+    if (projet.image) {
+      imageEl.src = projet.image;
+      imageEl.alt = `Image du projet ${projet.titre}`;
+      imageEl.style.display = "block";
+    } else {
+      imageEl.style.display = "none";
+    }
+
+    // Contenu HTML principal
     descriptionDiv.innerHTML = `
       <h2>Objectif du projet</h2>
-      <p>${projet.objectif}</p>
+      <p>${projet.objectif || "Non renseigné"}</p>
 
       <h2>Technologies utilisées</h2>
       <div class="techno-images">
-        
-        ${projet.techno.map(tech => `<div class="cont-img"><img src="media/${tech}.png" alt="${tech}" class="tech-icon"></div>`).join('')}
-        
+        ${projet.techno.map(tech => `<div class="cont-img"><img src="media/${tech}.png" alt="${tech}" class="tech-icon"></div>`).join("")}
       </div>
 
       <h2>Mon travail dans ce projet</h2>
-      <p>${projet.travail}</p>
+      <p>${projet.travail || "Non précisé"}</p>
+
+      ${projet.bouton ? `<a href="${projet.bouton.lien}" class="btn-projet" target="_blank">${projet.bouton.texte}</a>` : ""}
     `;
   }
 
   window.addEventListener("DOMContentLoaded", () => {
-    const cleProjet = getParametreProjet() || "projet1"; // valeur par défaut
+    const cleProjet = getParametreProjet() || "projet1";
     afficherProjet(cleProjet);
   });
 </script>
