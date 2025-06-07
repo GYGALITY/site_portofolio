@@ -540,6 +540,7 @@ body > span{
     align-items: center;
     margin-bottom: 100px;
     color: black;
+    
 }
 
 .contacte-main {
@@ -547,6 +548,7 @@ body > span{
     background-color: white;
     height: 600px;
     margin-top: 187px;
+    border-radius: 20px;
 }
 
 .contact-h1 {
