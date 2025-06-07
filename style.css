@@ -112,7 +112,7 @@ nav > div > span > a{
 
 
 #projet{
-    margin-bottom: 500px;
+    margin-bottom: 200px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -205,6 +205,10 @@ body > span{
     margin-bottom: 60px;
 }
 
+#compétence > div:nth-of-type(1){
+    margin-top: 60px;
+}
+
 #compétence > span{
     font-size: 30px;
     font-weight: bold;
@@ -292,6 +296,8 @@ body > span{
     font-size: 3em;
     margin: 60px 0 40px 0;
 }
+
+
 
 .projet-detail-section {
     display: flex;
@@ -401,6 +407,13 @@ body > span{
 
 }
 
+#Prenom h2{
+    font-size: 40px;
+    text-align: center;
+    margin-top: 100px;
+
+}
+
 
   
   /* Délais progressifs pour l’effet en cascade */
@@ -486,7 +499,6 @@ body > span{
 .apropos-titre {
   font-size: 3em;
   text-align: center;
-  color: #b68dff;
   margin-bottom: 40px;
 }
 
@@ -518,6 +530,210 @@ body > span{
 
 
 
+/* contact*/
+
+
+
+.contacte-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+    color: black;
+}
+
+.contacte-main {
+    width: 800px;
+    background-color: white;
+    height: 600px;
+    margin-top: 187px;
+}
+
+.contact-h1 {
+    margin-left: 4.5%;
+    margin-top: 40px;
+}
+
+.hr-contacte {
+    width: 90%;
+    height: 2.5px;
+    margin-top: 5px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #730FC3;
+    border: #730FC3;
+}
+
+.form-conteur {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contacte-form {
+    width: 90%;
+    height: 90%;
+}
+
+.form-box {
+    display: flex;
+    gap: 60px;
+}
+
+.signup-btn {
+    flex-direction: column;
+}
+
+.login-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.create-button {
+    background-color: transparent;
+    border: solid 2px #730FC3;
+    padding: 15px;
+    color: #730FC3;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    min-width: 234px;
+}
+
+.box-login {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 40px;
+}
+
+.contact-div-renseignement {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+    gap: 5px;
+}
+
+.contact-div-renseignement:last-child {
+    margin-bottom: 0;
+}
+
+
+.div-rensseignement {
+    flex-grow: 1;
+}
+
+.div-message {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 5px;
+    max-width: 337px;
+}
+
+input[type=text],
+input[type=password] {
+    width: 87%;
+    height: 40px;
+    padding-left: 43px;
+}
+
+input:invalid {
+    border: 2px solid red;
+}
+
+.img-contact-input {
+    background-position: left;
+    background-position-x: 8px;
+    background-repeat: no-repeat;
+}
+
+.img-nom {
+    background-image: url('Image/24.png');
+    background-size: 22px;
+}
+
+.img-email {
+    background-image: url('Image/23.png');
+    background-size: 25px;
+}
+
+.img-mdp {
+    background-image: url('Image/25.png');
+    background-size: 27px;
+    background-position-x: 8px;
+}
+
+
+.contact-textarea {
+    height: 100%;
+    max-width: 337px;
+    max-height: 255px;
+    min-width: 337px;
+    min-height: 255px;
+}
+
+.div-btn-envoie {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+.btn-envoie {
+    padding: 15px;
+    background-color: #730FC3;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    min-width: 234px;
+}
+
+@media(max-width:612px) {
+
+    .contacte-main {
+        width: 400px;
+        background-color: white;
+        height: 900px;
+    }
+
+    .form-box {
+        flex-direction: column;
+    }
+
+    .div-message {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        gap: 5px;
+        max-width: 360px;
+    }
+
+    .contact-textarea {
+        height: 100%;
+        max-width: 360px;
+        max-height: 259px;
+        min-width: 360px;
+        min-height: 259px;
+    }
+
+
+}
+
+.reseau {
+    display: flex;
+    gap: 20px;
+}
+
+.reseau img {
+    width: 40px;
+}
+
 
 
 
@@ -535,6 +751,8 @@ body > span{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .footer-contact p {

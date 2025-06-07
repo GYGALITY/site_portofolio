@@ -20,21 +20,26 @@
         <a href="projet.html?projet=projet2">Guide Debian</a>
         <a href="projet.html?projet=projet3">Analyse base de Donnée</a>
         <a href="projet.html?projet=projet4">Site Alten</a>
-        <a href="projet.html?projet=projet5">classement de dépêche</a>
+        <a href="projet.html?projet=projet5">Classement de dépêche</a>
         <a href="projet.html?projet=projet6">Création base de donnée</a>
-        <a href="projet.html?projet=projet7">installation poste de dévélopement</a>
+        <a href="projet.html?projet=projet7">Installation poste de dévélopement</a>
             
       </div>
     </div>
           
       
     <div>
-      <span><a href="#compétence">Compétences Techniques</a></span>
+      <span><a href="index.html#compétence">Compétences Techniques</a></span>
     </div>
 
     <div>
       <span> <a href="apropos.html">à propos</a></span>
     </div>
+
+     <div>
+      <span> <a href="contact.html">Me contacter</a></span>
+    </div>
+    
 
   </nav>
 
@@ -56,61 +61,59 @@
 
   <script>
   const projets = {
-    projet1: {
-      titre: "Application Guild Building",
-      image: "media/projet1.png",
-      objectif: "Créer une application de gestionnaire de fête médiéval pour des comités d’entreprise",
-      techno: ["word", "java"],
-      travail: "Mon travail dans ce projet à surtout été de concevoir les diagrammes UML de l'application et d'être responsable technique pour la partie java.",
-    },
-    projet2: {
-      titre: "Guide d'installation de Debian",
-      image: "media/projet2.png",
-      objectif: "Créer un Guide d'installation pour installer un serveur debian équipé d'Apache, PostgreSQL et PHP",
-      techno: ["comline", "word", "php", "sql", "java"],
-      travail: "J'ai conçu la structure du site, développé toutes les sections (accueil, projets, contact) et ajouté une animation en JavaScript.",
-      bouton: { texte: "Voir le guide", lien: "pdf/compe rendu final (1).pdf" }
-    },
-    projet3: {
-      titre: "Exploitation d'une base de donnée ",
-      image: "media/projet3.png",
-      objectif: "L'objectif de projet est d'informer les usagers sur les accidents de la route en France ces vingt dernières années.",
-      techno: ["r", "sql", "comline", "word"],
-      travail: "Lors de ce projet mon travail à été de trier les informations d'une base de donnée libre pour obtenir des information uniquement sur les vélo en nouvelle Aquitaine puis ensuite de les réutiliser avec du R pour produire des graphique pour un document PDF avec différentes indormations.",
-      bouton: { texte: "Voir le document", lien: "pdf/projet3.pdf" }
-    },
-    projet4: {
-      titre: "Site Alten",
-      image: "media/projet4.png",
-      objectif: "Coder un site pour des élèves de 3e à la recherche d’un stage, avec une interface simplifiée.",
-      techno: ["html", "css", "js"],
-      travail: `J’ai conçu une maquette du site selon les attentes. J’ai réalisé la page "Le Groupe" en HTML, CSS et JavaScript.`,
-      bouton: { texte: "Lien du site", lien: "https://gygality.github.io/alten/" }
-
-    },
-    projet5: {
-      titre: "Algorithme de classement de dépêche en Java",
-      image: "media/projet5.png",
-      objectif: "L'objectif de ce projet est de créer un programme de classification automatique de dépêches aussi fiable et aussi rapide que possible",
-      techno: ["java"],
-      travail: `Je me suis occuper de la réflexion pour optimiser au mieu le code pour être rapide mais également efficace mais également d'implémenter ça en java`
-    },
-    projet6: {
-      titre: "Création d'une base de données d'un club de bowling",
-      image: "media/projet6.png",
-      objectif: "L'objectif de ce projet à été de créer une base de donnée pour un club de bowling avec des contraintes qui nous avaient été fournie au préalable",
-      techno: ["sql", "word"],
-      travail: `Mon travail dans ce projet à été de réflechir comment concevoir une bonne base de donnée avec des contraintes données`,
-    },
-    projet7: {
-      titre: "Installation d'un poste de dévellopement linux",
-      image: "media/projet7.png",
-      objectif: "L'objectif de ce projet était d'installer un poste linux pour le dévellopent en y installent des logiciels",
-      techno: ["comline", "xmind"],
-      travail: `J'ai installer un système d'exploitation debian, j'ai égalment effectuer la configuration de la machine ainsi que des logiciels comme inteliji pour pouvoir développer dessus, j'ai égalemennt creer une carte mentale pour résumer les actions que j'avaient effectuer tout au long de l'installation`
-    }
-  };
-
+  projet1: {
+    titre: "Application Guild Building",
+    image: "media/projet1.png",
+    objectif: "Créer une application de gestion de fêtes médiévales destinée à des comités d’entreprise.",
+    techno: ["word", "java"],
+    travail: "Mon travail dans ce projet a principalement consisté à concevoir les diagrammes UML de l'application et à être responsable technique pour la partie Java."
+  },
+  projet2: {
+    titre: "Guide d'installation de Debian",
+    image: "media/projet2.png",
+    objectif: "Créer un guide d'installation pour mettre en place un serveur Debian équipé d'Apache, PostgreSQL et PHP.",
+    techno: ["comline", "word", "php", "sql", "java"],
+    travail: "J'ai conçu la structure du site, développé toutes les sections (accueil, projets, contact) et ajouté une animation en JavaScript.",
+    bouton: { texte: "Voir le guide", lien: "pdf/compe rendu final (1).pdf" }
+  },
+  projet3: {
+    titre: "Exploitation d'une base de données",
+    image: "media/projet3.png",
+    objectif: "Informer les usagers sur les accidents de la route en France au cours des vingt dernières années.",
+    techno: ["r", "sql", "comline", "word"],
+    travail: "J’ai trié les données d’une base libre pour extraire uniquement celles concernant les vélos en Nouvelle-Aquitaine, puis je les ai utilisées avec R pour générer des graphiques dans un document PDF contenant des informations ciblées.",
+    bouton: { texte: "Voir le document", lien: "pdf/projet3.pdf" }
+  },
+  projet4: {
+    titre: "Site Alten",
+    image: "media/projet4.png",
+    objectif: "Développer un site pour des élèves de 3e à la recherche d’un stage, avec une interface claire et simplifiée.",
+    techno: ["html", "css", "js"],
+    travail: "J’ai conçu une maquette du site en fonction des attentes, et réalisé la page « Le Groupe » en HTML, CSS et JavaScript.",
+    bouton: { texte: "Lien du site", lien: "https://gygality.github.io/alten/" }
+  },
+  projet5: {
+    titre: "Algorithme de classement de dépêches en Java",
+    image: "media/projet5.png",
+    objectif: "Créer un programme de classification automatique de dépêches aussi fiable et rapide que possible.",
+    techno: ["java"],
+    travail: "Je me suis occupé de la réflexion autour de l’optimisation du code pour qu’il soit à la fois rapide et efficace, puis j’ai implémenté cet algorithme en Java."
+  },
+  projet6: {
+    titre: "Création d'une base de données pour un club de bowling",
+    image: "media/projet6.png",
+    objectif: "Concevoir une base de données pour un club de bowling, en respectant les contraintes définies au préalable.",
+    techno: ["sql", "word"],
+    travail: "J’ai réfléchi à la meilleure façon de structurer la base de données selon les contraintes imposées, puis je l’ai modélisée."
+  },
+  projet7: {
+    titre: "Installation d'un poste de développement Linux",
+    image: "media/projet7.png",
+    objectif: "Installer un poste de travail sous Linux dédié au développement, avec tous les logiciels nécessaires.",
+    techno: ["comline", "xmind"],
+    travail: "J’ai installé le système Debian, configuré la machine ainsi que des logiciels comme IntelliJ, et créé une carte mentale pour résumer les étapes de l’installation."
+  }
+};
   function getParametreProjet() {
     const params = new URLSearchParams(window.location.search);
     return params.get('projet');
@@ -165,9 +168,10 @@
 </script>
 
 <footer class="footer-contact">
-    <p>Contactez-moi par mail : 
-      <a href="mailto:mathgard38@gmail.com">mathgard38@gmail.com</a>
+    <p>Mon mail universitaire: 
+      <a href="mailto:Mathis.Gardette@etu.univ-grenoble-alpes.fr">Mathis.Gardette@etu.univ-grenoble-alpes.fr</a>
     </p>
+    <a href="contact.html">formulaire de contact</a>
   </footer>
 
 </body>
