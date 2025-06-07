@@ -421,6 +421,9 @@ body > span{
 .projet-anim:nth-child(6) {
     animation-delay: 1.7s;
 }
+.projet-anim:nth-child(7) {
+    animation-delay: 2s;
+}
 
 .techno-images{
     margin-top: 10px;

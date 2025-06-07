@@ -12,22 +12,30 @@
     <div>
       <span><a href="index.html">Accueil</a></span>
     </div>
-    
+      
     <div class="dropdown">
       <span class="dropdown-toggle">Projet</span>
       <div class="dropdown-menu">
-         <a href="projet.html?projet=projet1">Guide Debian</a>
-        <a href="projet.html?projet=projet2">Analyse base de Donnée</a>
-        <a href="projet.html?projet=projet3">Site Alten</a>
-        <a href="projet.html?projet=projet4">classement de dépêche</a>
-        <a href="projet.html?projet=projet5">Création base de donnée</a>
-        <a href="projet.html?projet=projet6">installation poste de dévélopement</a>
+        <a href="projet.html?projet=projet1">Application Guild Building</a>
+        <a href="projet.html?projet=projet2">Guide Debian</a>
+        <a href="projet.html?projet=projet3">Analyse base de Donnée</a>
+        <a href="projet.html?projet=projet4">Site Alten</a>
+        <a href="projet.html?projet=projet5">classement de dépêche</a>
+        <a href="projet.html?projet=projet6">Création base de donnée</a>
+        <a href="projet.html?projet=projet7">installation poste de dévélopement</a>
+            
       </div>
     </div>
-    
+          
+      
     <div>
-      <span><a href="index.html#compétence">Compétences Techniques</a></span>
+      <span><a href="#compétence">Compétences Techniques</a></span>
     </div>
+
+    <div>
+      <span> <a href="apropos.html">à propos</a></span>
+    </div>
+
   </nav>
 
   <main id="detail-projet">
@@ -49,19 +57,25 @@
   <script>
   const projets = {
     projet1: {
+      titre: "Application Guild Building",
+      objectif: "Créer une application de gestionnaire de fête médiéval pour des comités d’entreprise",
+      techno: ["word", "java"],
+      travail: "Mon travail dans ce projet à surtout été de concevoir les diagrammes UML de l'application et d'être responsable technique pour la partie java.",
+    },
+    projet2: {
       titre: "Guide d'installation de Debian",
       objectif: "Créer un Guide d'installation pour installer un serveur debian équipé d'Apache, PostgreSQL et PHP",
       techno: ["comline", "word", "php", "sql", "java"],
       travail: "J'ai conçu la structure du site, développé toutes les sections (accueil, projets, contact) et ajouté une animation en JavaScript.",
       bouton: { texte: "Voir le guide", lien: "https://gygality.github.io/alten/" }
     },
-    projet2: {
+    projet3: {
       titre: "Exploitation d'une base de donnée ",
       objectif: "L'objectif de projet est d'informer les usagers sur les accidents de la route en France ces vingt dernières années.",
       techno: ["r", "sql", "comline", "word"],
       travail: "Lors de ce projet mon travail à été de trier les informations d'une base de donnée libre pour obtenir des information uniquement sur les vélo en nouvelle Aquitaine puis ensuite de les réutiliser avec du R pour produire des graphique pour un document PDF avec différentes indormations."
     },
-    projet3: {
+    projet4: {
       titre: "Site Alten",
       image: "media/projet3.png",
       objectif: "Coder un site pour des élèves de 3e à la recherche d’un stage, avec une interface simplifiée.",
@@ -70,20 +84,20 @@
       bouton: { texte: "Lien du site", lien: "https://gygality.github.io/alten/" }
 
     },
-    projet4: {
+    projet5: {
       titre: "Algorithme de classement de dépêche en Java",
       objectif: "L'objectif de ce projet est de créer un programme de classification automatique de dépêches aussi fiable et aussi rapide que possible",
       techno: ["java"],
       travail: `Je me suis occuper de la réflexion pour optimiser au mieu le code pour être rapide mais également efficace mais également d'implémenter ça en java`
     },
-    projet5: {
+    projet6: {
       titre: "Création d'une base de données d'un club de bowling",
-      objectif: "",
+      objectif: "L'objectif de ce projet à été de créer une base de donnée pour un club de bowling avec des contraintes qui nous avaient été fournie au préalable",
       techno: ["sql", "word"],
-      travail: ``,
+      travail: `Mon travail dans ce projet à été de réflechir comment concevoir une bonne base de donnée avec des contraintes données`,
       bouton: { texte: "Télécharger le PDF", lien: "https://example.com/bowling" }
     },
-    projet6: {
+    projet7: {
       titre: "Installation d'un poste de dévellopement linux",
       objectif: "L'objectif de ce projet était d'installer un poste linux pour le dévellopent en y installent des logiciels",
       techno: ["comline", "xmind"],
