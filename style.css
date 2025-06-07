@@ -344,6 +344,7 @@ body > span{
     background-color: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(5px);
     border-radius: 10px;
+    margin-bottom: 100px;
 }
 
 .description h2 {
@@ -469,10 +470,46 @@ body > span{
 
 
 
+/* === PAGE À PROPOS === */
 
+.apropos-container {
+  margin-top: 100px;
+  padding: 60px 20px;
+  color: white;
+  background: linear-gradient(to bottom, #12061F, #1d0e2d);
+ 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.apropos-titre {
+  font-size: 3em;
+  text-align: center;
+  color: #b68dff;
+  margin-bottom: 40px;
+}
 
+.apropos-section {
+  max-width: 800px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 30px;
+  border-radius: 15px;
+  backdrop-filter: blur(8px);
+  font-size: 1.2em;
+  line-height: 1.8em;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.03);
+  transition: transform 0.3s;
+}
 
+.apropos-section:hover {
+  transform: scale(1.01);
+}
+
+.apropos-section p {
+  margin-bottom: 20px;
+}
 
 
 
